@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/core/styles';
-import MobilRightMenuSlider from "@material-ui/core/Drawer";
+import MobilRightMenuSlider from '@material-ui/core/Drawer';
 
 import {
     AppBar,
@@ -15,7 +15,7 @@ import {
     List,
     Typography,
     Box, 
-    // Button,
+    Button
 } from "@material-ui/core";
 
 import {
@@ -26,13 +26,13 @@ import {
     ContactMail
 } from "@material-ui/icons";
 // import { blue, green, red } from '@material-ui/core/colors';
-import avatar from "../media/avatar2.png"
+import avatar from "../media/avatar2.png";
 
 /********** CSS STYLES  ********/
 const useStyles = makeStyles(theme=>({
     menuSliderContainer: {
         width: 250,
-        height: "30rem",
+        height: "100%",
         background: "#511",
     },
     avatar: {
@@ -77,11 +77,11 @@ const Navbar = () => {
         setState({ ...state, [slider]: open});
     };
 
-    const classes = useStyles() // Qui fait appel à la constante "useStyles" qui est déclaré tout en haut
+    const classes = useStyles(); // Qui fait appel à la constante "useStyles" qui est déclaré tout en haut
 
     const sideList = slider => (
-        <Box className={classes.menuSliderContainer} component="div">
-            <Avatar className={classes.avatar} src={avatar}  alt="Issa Demirci" />
+        <Box className={classes.menuSliderContainer} component="div" onClick={toggleSlider(slider, false)}>
+            <Avatar className={classes.avatar} src={avatar} alt="Issa Demirci" />
             <Divider />
             <List>
                 {menuItems.map((lsItem, key) => (
@@ -99,13 +99,10 @@ const Navbar = () => {
             <AppBar position="static" style={{background: "#222" }}>
                 <Toolbar>
                     <IconButton onClick={toggleSlider("right", true)}>
-                        {/* <MuiThemeProvider theme={theme}> */}
-                            {/* <Button> Retour </Button> Qui remplace ArrowBack */}
-                            <ArrowBack style={{color: "tomato"}} />
-                        {/* </MuiThemeProvider> */}
+                        <ArrowBack style={{color: "tomato"}} />
                     </IconButton>
                     <Typography variant="h5" style={{color: "tan"}} > Portfolio </Typography>
-                    <MobilRightMenuSlider open={state.right}>
+                    <MobilRightMenuSlider anchor="right" open={state.right} onClose={toggleSlider("right", false)}>
                         {sideList("right")}
                     </MobilRightMenuSlider>
                 </Toolbar>
