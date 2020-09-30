@@ -26,7 +26,7 @@ import {
     ContactMail
 } from "@material-ui/icons";
 // import { blue, green, red } from '@material-ui/core/colors';
-import avatar from "../media/avatar2.png";
+import avatar from "../media/avatar3.png";
 
 /********** CSS STYLES  ********/
 const useStyles = makeStyles(theme=>({
@@ -98,10 +98,10 @@ const Navbar = () => {
         <Box>
             <AppBar position="static" style={{background: "#222" }}>
                 <Toolbar>
-                    <IconButton onClick={toggleSlider("right", true)}>
+                    <IconButton onClick={toggleSlider("right", true)} >
                         <ArrowBack style={{color: "tomato"}} />
                     </IconButton>
-                    <Typography variant="h5" style={{color: "tan"}} > Portfolio </Typography>
+                    <Typography variant="h5" style={{color: "tan"}} className="portfolio" > Portfolio </Typography>
                     <MobilRightMenuSlider anchor="right" open={state.right} onClose={toggleSlider("right", false)}>
                         {sideList("right")}
                     </MobilRightMenuSlider>
