@@ -91,6 +91,11 @@ const Navbar = () => {
                     </ListItem>
                 ))}
             </List>
+            <br />
+            <IconButton onClick={toggleSlider("right", true)} >
+                <ArrowBack style={{color: "white"}} />
+                <Button style={{color: "white"}}>Retour</Button>
+            </IconButton>
         </Box>
     )
     return (
