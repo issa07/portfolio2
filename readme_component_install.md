@@ -22,6 +22,9 @@ npm install --save @types/react
 npm install react-particles-js || yarn add react-particles-js
 
 
+## react-router-dom "Pour naviguer entre les pages"
+npm i react-router-dom
+
 
 
 

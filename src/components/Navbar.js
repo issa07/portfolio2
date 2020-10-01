@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from "react-router-dom";
 // import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/core/styles';
 import MobilRightMenuSlider from '@material-ui/core/Drawer';
@@ -51,19 +52,26 @@ const menuItems = [
     {
         listIcon: <Home />,
         listText: "Home",
+        listPath: "/",
     },
     {
         listIcon: <AssignmentInd />,
         listText: "A propos de moi",
+        listPath: "/resume",
+        
     },
     {
         listIcon: <Apps />,
         listText: "Projets",
+        listPath: "/projets",
+
     },
     {
         listIcon: <ContactMail />,
         listText: "Contacter",
-    }
+        listPath: "/contact",
+
+    },
 ]
 // console.log(menuIcons);
 
@@ -85,7 +93,7 @@ const Navbar = () => {
             <Divider />
             <List>
                 {menuItems.map((lsItem, key) => (
-                    <ListItem button key={key} >
+                    <ListItem button key={key} component={Link} to={lsItem.listPath}>
                         <ListItemIcon className={classes.listItem}> {lsItem.listIcon} </ListItemIcon>
                         <ListItemText className={classes.listItem} primary={lsItem.listText} />
                     </ListItem>
@@ -106,7 +114,7 @@ const Navbar = () => {
                     <IconButton onClick={toggleSlider("right", true)} >
                         <ArrowBack style={{color: "tomato"}} />
                     </IconButton>
-                    <Typography variant="h5" style={{color: "tan"}} className="portfolio" > Portfolio </Typography>
+                    <Typography variant="h5" style={{color: "tan"}} className="portfolio" > Menu </Typography>
                     <MobilRightMenuSlider anchor="right" open={state.right} onClose={toggleSlider("right", false)}>
                         {sideList("right")}
                     </MobilRightMenuSlider>
