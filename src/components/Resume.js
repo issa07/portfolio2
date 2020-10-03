@@ -128,8 +128,76 @@ const Resume = () => {
                     <Typography variant="h5" align="center" className={classes.subHeading}>
                         ASSISTANT CONDUCTEUR DE TRAVAUX GTM BATIMENTS
                     </Typography>
-                    <Typography variant="body1" align="center" style={{color: "tan"}}>
+                    <Typography variant="body1" align="center" style={{color: "tomato"}}>
+                        (3 semaines)
+                    </Typography>
+                    <Typography variant="subtitle1" align="center" style={{color: "tan"}} >
                         S’occuper des démarches administratives nécessaires, Organiser les réunions d’équipes
+                    </Typography>
+                </Box>
+                <br />
+                <br /> 
+                <Typography variant="h2" 
+                className={`${classes.timeLineYear} ${classes.timeLineItem}`} > 
+                    2014
+                </Typography>
+               
+                <Box component="div" className={classes.timeLineItem} >
+                    <Typography variant="h5" align="center" className={classes.subHeading}>
+                        ASSISTANT TECHNICIEN INFORMATIQUE TÉLÉ MÉNAGER
+                    </Typography>
+                    <Typography variant="body1" align="center" style={{color: "tomato"}}>
+                        (4 semaines)
+                    </Typography>
+                    <Typography variant="subtitle1" align="center" style={{color: "tan"}} >
+                        Monter, installer et mettre en service els nouveaux matérieles informatiques. <br />
+                        Intervenir en assistance et réparation. 
+                    </Typography>
+                </Box>
+
+                <br />
+                <br />
+                <Typography variant="h2" 
+                className={`${classes.timeLineYear} ${classes.timeLineItem}`} > 
+                    2015-2018
+                </Typography>
+               
+                <Box component="div" className={classes.timeLineItem} >
+                    <Typography variant="h5" align="center" className={classes.subHeading}>
+                        Scolarité (Lycée)
+                    </Typography>
+                </Box>
+
+                <br />
+                <br /> 
+                <br />
+                <Typography variant="h2" 
+                className={`${classes.timeLineYear} ${classes.timeLineItem}`} > 
+                    2019
+                </Typography>
+               
+                <Box component="div" className={classes.timeLineItem} >
+                    <Typography variant="h5" align="center" className={classes.subHeading}>
+                        CHAUFFEUR PRIVÉ
+                    </Typography>
+                    <Typography variant="body1" align="center" style={{color: "tomato"}}>
+                        (4 semaines)
+                    </Typography>
+                </Box>
+
+                <Typography variant="h2" className={`${classes.timeLineYear} ${classes.timeLineItem}`} >
+                    2019
+                </Typography>
+                <Box component="div" className={classes.timeLineItem}>
+                    <Typography variant="h5" align="center" className={classes.subHeading} >
+                        SAMSUNG CAMPUS
+                    </Typography>
+                    <Typography variant="body1" align="center" style={{color: "tomato"}} >
+                        Bac +2: Développeur Web (Full-Stack)
+                    </Typography>
+                    <Typography variant="subtitle1" align="center" style={{color: "tan"}} >
+                        Integrateur-Développeur Web en full-stack <br />
+                        Première année validée
                     </Typography>
                 </Box>
 
