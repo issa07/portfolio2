@@ -22,7 +22,6 @@ const useStyles = makeStyles({
     },
 });
 
-
 const Footer = () => {
 
     const classes = useStyles();
