@@ -31,10 +31,6 @@ const useStyle = makeStyles({
         maxWidth: 400,
         // margin: "3rem",
         margin: "5rem auto",
-        "&:hover": {
-            transform: scale(1.2),
-            transition: .3,
-        }
     }
 })
 

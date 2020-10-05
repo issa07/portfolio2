@@ -8,8 +8,6 @@ import Resume from './components/Resume';
 import Projets from './components/Projets';
 import Contact from './components/Contact';
 
-import { Router } from '@material-ui/icons';
-import Navbar from './components/Navbar';
 
 function App() {
   return (
@@ -19,7 +17,6 @@ function App() {
     <Route path="/resume" component={Resume} />
     <Route path="/projets" component={Projets} />
     <Route path="/contact" component={Contact} />
-
     </>
   );
 }
