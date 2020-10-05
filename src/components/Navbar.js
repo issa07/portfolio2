@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 // import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/core/styles';
 import MobilRightMenuSlider from '@material-ui/core/Drawer';
+import avatar from "../media/avatar3.png";
+import Footer from './Footer';
 
 import {
     AppBar,
@@ -16,9 +18,7 @@ import {
     List,
     Typography,
     Box, 
-    Button
 } from "@material-ui/core";
-
 import {
     ArrowBack,
     AssignmentInd,
@@ -26,8 +26,7 @@ import {
     Apps,
     ContactMail
 } from "@material-ui/icons";
-// import { blue, green, red } from '@material-ui/core/colors';
-import avatar from "../media/avatar3.png";
+
 
 /********** CSS STYLES  ********/
 const useStyles = makeStyles(theme=>({
@@ -100,10 +99,10 @@ const Navbar = () => {
                 ))}
             </List>
             <br />
-            <IconButton onClick={toggleSlider("right", true)} >
+            {/* <IconButton onClick={toggleSlider("right", true)} >
                 <ArrowBack style={{color: "white"}} />
                 <Button style={{color: "white"}}>Retour</Button>
-            </IconButton>
+            </IconButton> */}
         </Box>
     )
     return (
@@ -117,6 +116,7 @@ const Navbar = () => {
                     <Typography variant="h5" style={{color: "tan"}} className="portfolio" > Menu </Typography>
                     <MobilRightMenuSlider anchor="right" open={state.right} onClose={toggleSlider("right", false)}>
                         {sideList("right")}
+                        <Footer />
                     </MobilRightMenuSlider>
                 </Toolbar>
             </AppBar>

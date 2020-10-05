@@ -1,9 +1,10 @@
 import React from 'react';
 import {makeStyles, withStyles} from "@material-ui/core/styles";
-import {TextField, Typography, Button, Grid, Box, TextareaAutosize} from "@material-ui/core";
+import {TextField, Typography, Button, Grid, Box} from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Navbar from './Navbar';
-import { Translate } from "@material-ui/icons";
+// import { Translate } from "@material-ui/icons";
+
 
 // Méthode 1: (
 // Pour utiliser la méthode 1, 
@@ -61,7 +62,7 @@ const Contact = () => {
     const classes = useStyles(); 
 
     return (
-        <Box component="div">
+        <Box component="div" className="bbody">
             <Navbar />  
             <Grid container justify="center">
                 <Box component="form" className={classes.form}>
@@ -101,7 +102,7 @@ const Contact = () => {
                     fullWidth={true} 
                     label="Message" 
                     variant="outlined" 
-                    inputProps={{style: {color: "white", width: "350px"}}}
+                    inputProps={{style: {color: "white"}}}
                     margin="dense" 
                     size="medium"
                     />

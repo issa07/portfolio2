@@ -17,10 +17,33 @@
 } */
 
 
+// Body for Contact
+.bbody {
+    background: linear-gradient(130deg, rgba(238, 229, 229, 0.322) 1%, transparent 90%);
+    height: 100vh;
+}
+
+
+// Petite animation pour les cases de la page de "Projets"
+.projets {
+    max-width: 400px;
+    // margin: "3rem",
+    margin: 5rem auto;
+    &:hover {
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+}
+
+
 .inputField, .area {
     background-color: rgba(54, 63, 55, 0.37);
 }
 
 .contactez-moi {
     color: tomato;
+    text-align: center;
 }
+
+
+

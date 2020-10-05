@@ -199,7 +199,6 @@ const Resume = () => {
                     </Typography>
                     <Typography variant="subtitle1" align="center" style={{color: "tan"}} >
                         Integrateur-Développeur Web en full-stack <br />
-                        Première année validée
                     </Typography>
                 </Box>
 

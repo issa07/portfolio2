@@ -19,7 +19,7 @@ import project2 from "../images/images/html-css-javascript.jpg";
 import Particles from "./Particle";
 
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme)=>({
     mainContainer: {
         // background: "#233",
         // height: "100%",
@@ -27,12 +27,14 @@ const useStyle = makeStyles({
         top: "8%",
         zIndex: 1,
     },
-    cardContainer: {
-        maxWidth: 400,
-        // margin: "3rem",
-        margin: "5rem auto",
-    }
-})
+
+    // Remplacé par les scss donc celui ci est inutile
+    // cardContainer: {
+    //     maxWidth: 400,
+    //     // margin: "3rem",
+    //     margin: "5rem auto",
+    // }
+}));
 
 const Projets = () => {
     const classes = useStyle();
@@ -45,9 +47,9 @@ const Projets = () => {
 
 
                 {/* Projets 1 */}
-                <Grid item xs={12} sm={8} md={6} >
-                    <Card className={classes.cardContainer}>
-                        <CardActionArea>
+                <Grid item xs={12} sm={8} md={6}  >
+                    <Card className="projets">
+                        <CardActionArea >
                             <CardMedia 
                             component="img" 
                             alt="Projet 1" 
@@ -83,7 +85,7 @@ const Projets = () => {
 
                 {/* Projets 2  */}
                 <Grid item xs={12} sm={8} md={6} >
-                    <Card className={classes.cardContainer}>
+                    <Card className="projets">
                         <CardActionArea>
                             <CardMedia 
                             component="img" 
@@ -115,7 +117,7 @@ const Projets = () => {
 
                 {/* Projet 3 */}
                 <Grid item xs={12} sm={8} md={6} >
-                    <Card className={classes.cardContainer}>
+                    <Card className="projets">
                         <CardActionArea>
                             <CardMedia 
                             component="img" 
@@ -147,7 +149,7 @@ const Projets = () => {
 
                 {/* Projet 4 */}
                 <Grid item xs={12} sm={8} md={6} >
-                    <Card className={classes.cardContainer}>
+                    <Card className="projets">
                         <CardActionArea>
                             <CardMedia 
                             component="img" 
