@@ -8,7 +8,6 @@ import Resume from './components/Resume';
 import Projets from './components/Projets';
 import Contact from './components/Contact';
 
-
 function App() {
   return (
     <>

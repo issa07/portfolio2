@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import * as emailjs from "emailjs-com";
 import {makeStyles, withStyles} from "@material-ui/core/styles";
 import {TextField, Typography, Button, Grid, Box} from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Navbar from './Navbar';
-// import { Translate } from "@material-ui/icons";
 
 
 // Méthode 1: (
@@ -30,6 +30,9 @@ const useStyles = makeStyles(theme=>({
         color: "tomato",
         borderColor: "tomato",
     },
+    messageSent: {
+        color: "red",
+    }
 }));
 
 
@@ -56,78 +59,151 @@ const InputField = withStyles({
     },
 })(TextField);
 
-const Contact = () => {
 
-    // Méthodes 1:
-    const classes = useStyles(); 
+// const formValid = formErrors => {
+//     let valid = true;
 
-    return (
-        <Box component="div" className="bbody">
-            <Navbar />  
-            <Grid container justify="center">
-                <Box component="form" className={classes.form}>
-                    <Typography variant="h5" className="contactez-moi">
-                        Contactez-moi...
-                    </Typography>
-                    {/* <TextField: Méthode 1: */}
-                    {/* <TextField 
-                        className={classes.root} 
-                        fullWidth={true} id="outlined-basic" 
-                        label="Outlined" variant="outlined">
-                    </TextField>   */}
-                    <InputField 
-                    className="inputField" 
-                    fullWidth={true} 
-                    label="Name" 
-                    variant="outlined" 
-                    inputProps={{style: {color: "white"}}}
-                    margin="dense" 
-                    size="medium" />
+//     Object.values(formErrors).forEach(val => {
+//         val.length > 0 && (valid = false)
+//     });
+//     return valid;
+// }
 
-                    <br />
-                    <InputField 
-                    className="inputField" 
-                    fullWidth={true} 
-                    label="Email" 
-                    variant="outlined" 
-                    inputProps={{style: {color: "white"}}}
-                    margin="dense" 
-                    size="medium"/>
+class Contact extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "",
+            email: "",
+            message: "",
+            // formErrors: {
+            //     name: "",
+            //     email: "",
+            //     message: ""
+            // }
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    };
+    
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    };
+    
+    handleSubmit = (e) => {
+        e.preventDefault();
+        // if (formValid(this.state.formErrors)) {
+        //     console.log("Validé");
+        // }
+        emailjs
+        .sendForm(
+            "gmail",
+            "portfolio",
+            "#formulaire",
+            "user_fQbOW4rJWmlEK6hFAGLdm"            
+        )
+        .then()
+        .catch();
+        this.setState({
+            name: "",
+            email: "",
+            message: "",
+        });
 
-                    <br />
-                    <InputField
-                    className="inputField" 
-                    multiline
-                    rows={8}
-                    fullWidth={true} 
-                    label="Message" 
-                    variant="outlined" 
-                    inputProps={{style: {color: "white"}}}
-                    margin="dense" 
-                    size="medium"
-                    />
+        // let msg = document.querySelector(".form");
+        // if(!!this.handleSubmit.bind(this)) {
+        //     console.log("les champs ne sont pas remplis")
+        // }
+        // else {
+        //     msg.innerHTML = "<h1> Votre message bien a été envoyé </h1>";
+        // }
+       
+    };
 
-                    <br />
-                    {/* <TextarArea
-                    rowsMin={8}
-                    className={classes.area} 
-                    placeholder="Votre message"
-                    fullWidth={true} 
-                    label="Message" 
-                    variant="outlined" 
-                    // inputProps={{style: {color: "white", height: "100px"}}}
-                    margin="dense" 
-                    size="medium"
-                    /> */}
+    render() {
+        const classes = this.props.classes;
+        return (  
+            <div>
+                <Box component="div" className="bbody">
+                    <Navbar />  
+                    <Grid container justify="center" className="form">
+                        <Box className={classes.form} >
+                            <Typography variant="h5" className="contactez-moi">
+                                Contactez-moi...
+                            </Typography>
+                            <form
+                            onSubmit={this.handleSubmit.bind(this)}
+                            id="formulaire">
 
-                    <br />
-                    <Button className={classes.bouton} variant="outlined" fullWidth={true} endIcon={<SendIcon />} >
-                        Envoyez
-                    </Button>
+                                <InputField 
+                                className="inputField" 
+                                fullWidth={true} 
+                                id="name"
+                                name="name"
+                                value={this.state.name}
+                                onChange={this.handleChange.bind(this)}
+                                label="Name" 
+                                variant="outlined" 
+                                inputProps={{style: {color: "white"}}}
+                                margin="dense" 
+                                size="medium" />
+
+                                <br />
+                                <InputField 
+                                className="inputField" 
+                                fullWidth={true} 
+                                id="email"
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleChange.bind(this)}
+                                label="Email" 
+                                variant="outlined" 
+                                inputProps={{style: {color: "white"}}}
+                                margin="dense" 
+                                size="medium"/>
+
+                                <br />
+                                <InputField
+                                className="inputField" 
+                                multiline
+                                rows={8}
+                                fullWidth={true} 
+                                id="message"
+                                name="message"
+                                value={this.state.message}
+                                onChange={this.handleChange.bind(this)}
+                                label="Message" 
+                                variant="outlined" 
+                                inputProps={{style: {color: "white"}}}
+                                margin="dense" 
+                                size="medium"
+                                />
+
+                                <br />
+                                <Button 
+                                className={classes.bouton} 
+                                variant="outlined" 
+                                fullWidth={true} 
+                                endIcon={<SendIcon />} 
+                                // onSubmit={this.handleSubmit.bind(this)}
+                                type="submit"
+                                >
+                                Envoyez
+                                </Button>
+                            </form>
+                        </Box>
+                    </Grid>
                 </Box>
-            </Grid>
-        </Box>
-    );
-};
+            </div>
+        )
+    }
+}
 
-export default Contact;
+
+export default () => {
+    const classes = useStyles();
+    return (
+        <Contact classes={classes} />
+    )
+}
+

@@ -29,6 +29,8 @@ npm i react-router-dom
 
 
 
+## PS: J'ai utilisé Emailjs pour la partie contact afin de contacter ou envoyer un message.
+npm install emailjs
 
 
 
