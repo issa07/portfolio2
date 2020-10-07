@@ -5,19 +5,6 @@ import {TextField, Typography, Button, Grid, Box} from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Navbar from './Navbar';
 
-
-// Méthode 1: (
-// Pour utiliser la méthode 1, 
-// il faut appeler la const de "useStyles" dans la const "Contact" => 'const classes = useStyles()' 
-// puis appeler la "classes" dans className. Ex: => className={classes.(le nom de classe) dans notre cas c'est "root"})
-// const useStyles = makeStyles({
-//     root: {
-//         "& label.Mui-focused": {
-//             color: "tomato",
-//         },
-//     },
-// });
-
 const useStyles = makeStyles(theme=>({
     form: {
         top: "50%",
@@ -34,7 +21,6 @@ const useStyles = makeStyles(theme=>({
         color: "red",
     }
 }));
-
 
 // Méthode 2:
 const InputField = withStyles({
@@ -60,74 +46,108 @@ const InputField = withStyles({
 })(TextField);
 
 
-// const formValid = formErrors => {
-//     let valid = true;
+const initialState = {
+    name: "",
+    email: "",
+    message: "",
+    nameError: "",
+    emailError: "",
+    messageError: "",
 
-//     Object.values(formErrors).forEach(val => {
-//         val.length > 0 && (valid = false)
-//     });
-//     return valid;
-// }
+    msgSent: "",
+}
 
 class Contact extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            name: "",
-            email: "",
-            message: "",
-            // formErrors: {
-            //     name: "",
-            //     email: "",
-            //     message: ""
-            // }
-        };
+        this.state = initialState;
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     };
+
     
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
+        // this.setState({ [e.target.name]: e.target.value });
+
+        const isCheckbox = e.target.type === "checkbox";
+        this.setState({
+            [e.target.name]: isCheckbox
+            ? e.target.checked
+            : e.target.value
+        });
     };
+
+    validate = () => {
+        let nameError = "";
+        let emailError = "";
+        let messageError = "";
+        // let msgSent = "";
+
+        if (!this.state.name) {
+            nameError = "Entrez votre nom !";
+        } 
+        if (!this.state.message) {
+            messageError = "Entrez votre message !";
+        } 
+        if (!this.state.email.includes('@')) {
+            emailError = "Email non valide";
+        }
+        if (emailError || nameError || messageError) {
+            this.setState({ emailError, nameError, messageError });
+            return false;
+        }
+        return true;
+    }
     
     handleSubmit = (e) => {
         e.preventDefault();
-        // if (formValid(this.state.formErrors)) {
-        //     console.log("Validé");
-        // }
-        emailjs
-        .sendForm(
-            "gmail",
-            "portfolio",
-            "#formulaire",
-            "user_fQbOW4rJWmlEK6hFAGLdm"            
-        )
-        .then()
-        .catch();
-        this.setState({
-            name: "",
-            email: "",
-            message: "",
-        });
+        const isValid = this.validate();
+        let msgSent = "";
 
-        // let msg = document.querySelector(".form");
-        // if(!!this.handleSubmit.bind(this)) {
-        //     console.log("les champs ne sont pas remplis")
-        // }
-        // else {
-        //     msg.innerHTML = "<h1> Votre message bien a été envoyé </h1>";
-        // }
-       
+        if (isValid) {
+            // Emailjs used for send the values in account of gmail (contactmeportfolio01@gmail.com)
+            emailjs
+            .sendForm(
+                "gmail",
+                "portfolio",
+                "#formulaire",
+                "user_fQbOW4rJWmlEK6hFAGLdm"            
+                )
+                .then()
+                .catch();
+                this.setState({
+                    name: "",
+                    email: "",
+                    message: "",
+                });
+
+                
+                // Initializ form
+                this.setState(initialState);
+                
+                // console.log(this.state);
+                msgSent = "Votre message a bien été envoyé. "
+                this.setState({msgSent});
+                return true;
+        }
     };
 
     render() {
         const classes = this.props.classes;
+        
         return (  
             <div>
                 <Box component="div" className="bbody">
                     <Navbar />  
                     <Grid container justify="center" className="form">
                         <Box className={classes.form} >
+                            {this.state.msgSent ? (
+                                <div style={{fontSize: 20, color: "red"}} >
+                                    {this.state.msgSent} 
+                                </div> ): null }
+
+                            <br />
                             <Typography variant="h5" className="contactez-moi">
                                 Contactez-moi...
                             </Typography>
@@ -141,12 +161,18 @@ class Contact extends Component {
                                 id="name"
                                 name="name"
                                 value={this.state.name}
-                                onChange={this.handleChange.bind(this)}
+                                onChange={this.handleChange}
+                                // onChange={handleChange}
                                 label="Name" 
                                 variant="outlined" 
                                 inputProps={{style: {color: "white"}}}
                                 margin="dense" 
                                 size="medium" />
+
+                                {this.state.nameError ? (
+                                <div style={{fontSize: 14, color: "red"}} >
+                                    {this.state.nameError} 
+                                </div> ): null }
 
                                 <br />
                                 <InputField 
@@ -155,12 +181,18 @@ class Contact extends Component {
                                 id="email"
                                 name="email"
                                 value={this.state.email}
-                                onChange={this.handleChange.bind(this)}
+                                onChange={this.handleChange}
+                                // onChange={handleChange}
                                 label="Email" 
                                 variant="outlined" 
                                 inputProps={{style: {color: "white"}}}
                                 margin="dense" 
                                 size="medium"/>
+
+                                {this.state.emailError ? (
+                                <div style={{fontSize: 14, color: "red"}} >
+                                    {this.state.emailError} 
+                                </div> ): null }
 
                                 <br />
                                 <InputField
@@ -171,13 +203,19 @@ class Contact extends Component {
                                 id="message"
                                 name="message"
                                 value={this.state.message}
-                                onChange={this.handleChange.bind(this)}
+                                onChange={this.handleChange}
+                                // onChange={handleChange}
                                 label="Message" 
                                 variant="outlined" 
                                 inputProps={{style: {color: "white"}}}
                                 margin="dense" 
                                 size="medium"
                                 />
+
+                                {this.state.messageError ? (
+                                <div style={{fontSize: 14, color: "red"}} >
+                                    {this.state.messageError} 
+                                </div> ): null }
 
                                 <br />
                                 <Button 
@@ -202,8 +240,9 @@ class Contact extends Component {
 
 export default () => {
     const classes = useStyles();
+    // const { handleChange, values } = useForm();
     return (
-        <Contact classes={classes} />
+        <Contact classes={classes}/>
     )
 }
 

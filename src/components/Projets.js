@@ -14,15 +14,11 @@ import {
 import Navbar from "./Navbar";
 import project1 from "../images/images/html-css-javascript-lg.jpg";
 import project2 from "../images/images/html-css-javascript.jpg";
-
-// import Particles from 'react-particles-js';
 import Particles from "./Particle";
 
 
 const useStyle = makeStyles((theme)=>({
     mainContainer: {
-        // background: "#233",
-        // height: "100%",
         position: "absolute",
         top: "8%",
         zIndex: 1,
@@ -130,7 +126,10 @@ const Projets = () => {
                                     e-commerce
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                Le site doit être visible depuis un ordinateur, une tablette ou un téléphone. Les images doivent toujours être affichées à 100%. C’est à dire que vous devez prévoir des images hautes et basses définitions. Le redimensionnement du navigateur (de manière à émuler un autre périphérique) doit par conséquent influer sur l’URL des images affichées.
+                                Vous êtes libres d’utiliser toutes les technologies de votre choix. Cependant, il est impératif que votre page
+                                vitrine soit « Flat Design », « Responsive » et « One Page ». Vous trouverez de bonnes définitions à ces 3
+                                termes en vous renseignant sur votre moteur de recherche favori.
+                                Vous devez créer un menu pour faciliter la navigation sur votre site.
                                 </Typography>
                             </CardContent>
                         </CardActionArea>  
@@ -159,7 +158,7 @@ const Projets = () => {
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5">
-                                    
+                                    Portfolio 2
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
                                 Le site doit être visible depuis un ordinateur, une tablette ou un téléphone. Les images doivent toujours être affichées à 100%. C’est à dire que vous devez prévoir des images hautes et basses définitions. Le redimensionnement du navigateur (de manière à émuler un autre périphérique) doit par conséquent influer sur l’URL des images affichées.
