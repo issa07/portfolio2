@@ -66,14 +66,18 @@ const Projets = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
+                            <a href="localhost:3001" target="__bank">
                             <i className="fas fa-plus-circle" >
                                 <Button size="small" color="primary" >
                                     Voir le Projet
                                 </Button>
                             </i>
-                            <Button size="small" color="primary">
-                                Lien GitHub
-                            </Button>
+                            </a>
+                            <a href="https://github.com/issa07/portfolio" target="__bank">>
+                                <Button size="small" color="primary">
+                                    Lien GitHub
+                                </Button>
+                            </a>  
                         </CardActions>
                     </Card>
                 </Grid>
@@ -99,14 +103,18 @@ const Projets = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
+                            <a href="http://localhost/maquette-responsive/" target="__bank">
                             <i className="fas fa-plus-circle" >
                                 <Button size="small" color="primary">
                                  Voir le Projet
                                 </Button>
                             </i>
-                            <Button size="small" color="primary">
-                                Lien GitHub
-                            </Button>
+                            </a>
+                            <a href="https://github.com/issa07/maquette-responsive" target="__bank">
+                                <Button size="small" color="primary">
+                                    Lien GitHub
+                                </Button>
+                            </a>
                         </CardActions>
                     </Card>
                 </Grid>
