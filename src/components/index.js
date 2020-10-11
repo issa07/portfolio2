@@ -13,7 +13,6 @@ const Home = () => {
         <div>
             <Navbar />
             <Header />
-            {/* <Projets /> */}
             <Particle />
             
         </div>
