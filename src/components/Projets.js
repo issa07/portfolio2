@@ -66,14 +66,14 @@ const Projets = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <a href="localhost:3001" target="__bank">
+                            <a href="www.google.com" target="__bank">
                             <i className="fas fa-plus-circle" >
                                 <Button size="small" color="primary" >
                                     Voir le Projet
                                 </Button>
                             </i>
                             </a>
-                            <a href="https://github.com/issa07/portfolio" target="__bank">>
+                            <a href="https://github.com/issa07/portfolio" target="__bank">
                                 <Button size="small" color="primary">
                                     Lien GitHub
                                 </Button>
@@ -103,7 +103,7 @@ const Projets = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <a href="http://localhost/maquette-responsive/" target="__bank">
+                            <a href="www.google.com" target="__bank">
                             <i className="fas fa-plus-circle" >
                                 <Button size="small" color="primary">
                                  Voir le Projet
