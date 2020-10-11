@@ -7,17 +7,17 @@ import App from './App';
 import './styles/settings.scss';
 
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-// serviceWorker.unregister();
-
 ReactDOM.render(
-    <Router>
-        <App/>
-    </Router>, 
-    document.getElementById('root'));
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+serviceWorker.unregister();
+
+// ReactDOM.render(
+//     <Router>
+//         <App/>
+//     </Router>, 
+//     document.getElementById('root'));
