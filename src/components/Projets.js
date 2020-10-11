@@ -66,7 +66,7 @@ const Projets = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <a href="www.google.com" target="__bank">
+                            <a href="https://issa07.github.io/portfolio/" target="__bank">
                             <i className="fas fa-plus-circle" >
                                 <Button size="small" color="primary" >
                                     Voir le Projet
@@ -83,7 +83,43 @@ const Projets = () => {
                 </Grid>
 
 
-                {/* Projets 2  */}
+                {/* Projet 2 */}
+                <Grid item xs={12} sm={8} md={6} >
+                    <Card className="projets">
+                        <CardActionArea>
+                            <CardMedia 
+                            component="img" 
+                            alt="project 3" 
+                            height="140" 
+                            image={project2} 
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5">
+                                    e-commerce
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                Vous êtes libres d’utiliser toutes les technologies de votre choix. Cependant, il est impératif que votre page
+                                vitrine soit « Flat Design », « Responsive » et « One Page ». Vous trouverez de bonnes définitions à ces 3
+                                termes en vous renseignant sur votre moteur de recherche favori.
+                                Vous devez créer un menu pour faciliter la navigation sur votre site.
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>  
+                        <CardActions>
+                        <i className="fas fa-plus-circle" >
+                                <Button size="small" color="primary">
+                                    Voir le Projet
+                                </Button>
+                            </i>
+                            <Button size="small" color="primary">
+                                Lien GitHub
+                            </Button>
+                        </CardActions>
+                    </Card>
+                </Grid>
+
+
+                {/* Projets 3  */}
                 <Grid item xs={12} sm={8} md={6} >
                     <Card className="projets">
                         <CardActionArea>
@@ -119,40 +155,6 @@ const Projets = () => {
                     </Card>
                 </Grid>
 
-                {/* Projet 3 */}
-                <Grid item xs={12} sm={8} md={6} >
-                    <Card className="projets">
-                        <CardActionArea>
-                            <CardMedia 
-                            component="img" 
-                            alt="project 3" 
-                            height="140" 
-                            image={project2} 
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5">
-                                    e-commerce
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                Vous êtes libres d’utiliser toutes les technologies de votre choix. Cependant, il est impératif que votre page
-                                vitrine soit « Flat Design », « Responsive » et « One Page ». Vous trouverez de bonnes définitions à ces 3
-                                termes en vous renseignant sur votre moteur de recherche favori.
-                                Vous devez créer un menu pour faciliter la navigation sur votre site.
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>  
-                        <CardActions>
-                        <i className="fas fa-plus-circle" >
-                                <Button size="small" color="primary">
-                                    Voir le Projet
-                                </Button>
-                            </i>
-                            <Button size="small" color="primary">
-                                Lien GitHub
-                            </Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
 
                 {/* Projet 4 */}
                 <Grid item xs={12} sm={8} md={6} >
