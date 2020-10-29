@@ -110,10 +110,10 @@ const Navbar = () => {
         <Box>
             <AppBar position="static" style={{background: "#222" }}>
                 <Toolbar>
-                    <IconButton onClick={toggleSlider("right", true)} >
+                    {/* <IconButton onClick={toggleSlider("right", true)} >
                         <ArrowBack style={{color: "tomato"}} />
-                    </IconButton>
-                    <Typography variant="h5" style={{color: "tan"}} className="portfolio" > Menu </Typography>
+                    </IconButton> */}
+                    <Typography variant="h5" style={{color: "tan", position: "relative", left: "50px"}} className="portfolio" onClick={toggleSlider("right", true)}> Menu </Typography>
                     <MobilRightMenuSlider anchor="right" open={state.right} onClose={toggleSlider("right", false)}>
                         {sideList("right")}
                         <Footer />

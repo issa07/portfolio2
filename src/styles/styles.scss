@@ -52,3 +52,10 @@
 a {
     text-decoration: none;
 }
+
+.portfolio:hover {
+    cursor: pointer;
+}
+.img {
+    filter: brightness(80%);
+}

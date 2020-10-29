@@ -5,7 +5,6 @@ import Twitter from "@material-ui/icons/Twitter";
 import LinkedIn from "@material-ui/icons/LinkedIn";
 import GitHub from "@material-ui/icons/GitHub";
 
-
 const useStyles = makeStyles({
     root: {
         "& .MuiBottomNavigationAction-root": {
@@ -34,18 +33,22 @@ const Footer = () => {
             style={{padding: 0}}
             icon={<Twitter />}
             />
+            
+            <a href="https://www.linkedin.com/in/issa-d-4a91b81b4/" target='__bank'>
+                <BottomNavigationAction
+                className={classes.root} 
+                // style={{padding: 0}}
+                icon={<LinkedIn />}
+                />
+            </a>
 
-            <BottomNavigationAction
-            className={classes.root} 
-            style={{padding: 0}}
-            icon={<LinkedIn />}
-            />
-
-            <BottomNavigationAction
-            className={classes.root} 
-            style={{padding: 0}}
-            icon={<GitHub />}
-            />
+            <a href="https://github.com/issa07?tab=repositories" target="__bank">
+                <BottomNavigationAction
+                className={classes.root} 
+                // style={{padding: 0}}
+                icon={<GitHub />}
+                />
+            </a>
         </BottomNavigation>
     );
 };

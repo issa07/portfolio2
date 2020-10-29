@@ -12,9 +12,12 @@ import {
     Typography,
 } from "@material-ui/core";
 import Navbar from "./Navbar";
-import project1 from "../images/images/html-css-javascript-lg.jpg";
-import project2 from "../images/images/html-css-javascript.jpg";
 import Particles from "./Particle";
+import reactjs from "../images/images/react_sass.png";
+import project2 from "../images/images/laravel.png";
+import htmlcss from "../images/images/htmlcss.png";
+import reactUI from "../images/images/react_materialUI.png"
+
 
 
 const useStyle = makeStyles((theme)=>({
@@ -49,19 +52,17 @@ const Projets = () => {
                             <CardMedia 
                             component="img" 
                             alt="Projet 1" 
-                            height="140" 
-                            image={project1} 
-                            // className="img"
+                            height="160" 
+                            image={reactjs} 
+                            className="img"
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5">
                                     Portfolio
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                Vous êtes libres d’utiliser toutes les technologies de votre choix. Cependant, il est impératif que votre page
-                                vitrine soit « Flat Design », « Responsive » et « One Page ». Vous trouverez de bonnes définitions à ces 3
-                                termes en vous renseignant sur votre moteur de recherche favori.
-                                Vous devez créer un menu pour faciliter la navigation sur votre site.
+                                Il s'agit d'un site de portfolio qu'il fallait faire en Reactjs. <br />
+                                <strong>React + Sass</strong>                                
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -90,18 +91,16 @@ const Projets = () => {
                             <CardMedia 
                             component="img" 
                             alt="project 3" 
-                            height="140" 
+                            height="160" 
                             image={project2} 
+                            // className="img"
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5">
-                                    e-commerce
+                                    E-commerce
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                Vous êtes libres d’utiliser toutes les technologies de votre choix. Cependant, il est impératif que votre page
-                                vitrine soit « Flat Design », « Responsive » et « One Page ». Vous trouverez de bonnes définitions à ces 3
-                                termes en vous renseignant sur votre moteur de recherche favori.
-                                Vous devez créer un menu pour faciliter la navigation sur votre site.
+                                Il s'agit d'un site de e-commerce à réaliser avec le Framework de Laravel
                                 </Typography>
                             </CardContent>
                         </CardActionArea>  
@@ -111,9 +110,11 @@ const Projets = () => {
                                     Voir le Projet
                                 </Button>
                             </i>
-                            <Button size="small" color="primary">
-                                Lien GitHub
-                            </Button>
+                            <a href="https://github.com/issa07/e-commerce" target="__bank">
+                                <Button size="small" color="primary">
+                                    Lien GitHub
+                                </Button>
+                            </a>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -126,15 +127,15 @@ const Projets = () => {
                             <CardMedia 
                             component="img" 
                             alt="project 2" 
-                            height="140" 
-                            image={project2} 
+                            height="160" 
+                            image={htmlcss} 
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5">
-                                    Maquette resposive
+                                    Maquette responsive
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                Le site doit être visible depuis un ordinateur, une tablette ou un téléphone. Les images doivent toujours être affichées à 100%. C’est à dire que vous devez prévoir des images hautes et basses définitions. Le redimensionnement du navigateur (de manière à émuler un autre périphérique) doit par conséquent influer sur l’URL des images affichées.
+                                    Il s'agit d'une maquette responsive qui est adapté aux PC, tablettes et téléphone portable. 
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -163,15 +164,18 @@ const Projets = () => {
                             <CardMedia 
                             component="img" 
                             alt="project 4" 
-                            height="140" 
-                            image={project1} 
+                            height="160" 
+                            image={reactUI} 
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5">
                                     Portfolio 2
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                Le site doit être visible depuis un ordinateur, une tablette ou un téléphone. Les images doivent toujours être affichées à 100%. C’est à dire que vous devez prévoir des images hautes et basses définitions. Le redimensionnement du navigateur (de manière à émuler un autre périphérique) doit par conséquent influer sur l’URL des images affichées.
+                                    <strong style={{color: "tomato"}} >C'est le site actuel </strong> <br />
+                                    Il s'agit d'un deuxième site de portfolio personnel que j'ai fait, 
+                                    l'histoire d'être familiarisé avec Reactjs. <br />
+                                    <strong>React + Material UI </strong>
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -181,9 +185,11 @@ const Projets = () => {
                                     Voir le Projet
                                 </Button>
                             </i>
-                            <Button size="small" color="primary">
-                                Lien GitHub
-                            </Button>
+                            <a href="https://github.com/issa07/portfolio2" target="__bank">
+                                <Button size="small" color="primary">
+                                    Lien GitHub
+                                </Button>
+                            </a>
                         </CardActions>
                     </Card>
                 </Grid>
