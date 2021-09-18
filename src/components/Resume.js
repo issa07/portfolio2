@@ -144,7 +144,7 @@ const Resume = () => {
                
                 <Box component="div" className={classes.timeLineItem} >
                     <Typography variant="h5" align="center" className={classes.subHeading}>
-                        CHAUFFEUR PRIVÉ
+                        CHAUFFEUR PRIVÉ !
                     </Typography>
                     {/* <Typography variant="body1" align="center" style={{color: "tomato"}}>
                         (4 semaines)
