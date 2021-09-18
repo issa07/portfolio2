@@ -141,15 +141,7 @@ const Resume = () => {
                 className={`${classes.timeLineYear} ${classes.timeLineItem}`} > 
                     2018-2019
                 </Typography>
-               
-                <Box component="div" className={classes.timeLineItem} >
-                    <Typography variant="h5" align="center" className={classes.subHeading}>
-                        CHAUFFEUR PRIVÉ. !!
-                    </Typography>
-                    {/* <Typography variant="body1" align="center" style={{color: "tomato"}}>
-                        (4 semaines)
-                    </Typography> */}
-                </Box>
+
                 <Box component="div" className={classes.timeLineItem} >
                     <Typography variant="h5" align="center" className={classes.subHeading}>
                         ASSISTANT TECHNICIEN INFORMATIQUE TÉLÉ MÉNAGER
